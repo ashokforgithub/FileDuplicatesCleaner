@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.mycomp.dupcleaner.factory.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import com.mycomp.dupcleaner.factory.CheckBoxCellFactory?>
+
+<AnchorPane prefHeight="610.0" prefWidth="1081.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycomp.dupcleaner.controller.DupCleanController">
+   <children>
+      <Label layoutX="41.0" layoutY="42.0" prefHeight="17.0" prefWidth="69.0" text="Folder Path" />
+      <Button layoutX="317.0" layoutY="38.0" mnemonicParsing="false" onAction="#browseFolder" text="Browse" />
+      <TextField fx:id="filePath" layoutX="110.0" layoutY="38.0" prefHeight="25.0" prefWidth="197.0" text="Select the Folder path" />
+      <TextField layoutX="112.0" layoutY="78.0" prefHeight="25.0" prefWidth="197.0" text="*.filetype eg *.mov,*.jpg" />
+      <Label layoutX="43.0" layoutY="82.0" prefHeight="17.0" prefWidth="69.0" text="Filter" />
+      <Button layoutX="374.0" layoutY="38.0" mnemonicParsing="false" onAction="#addFolder" onMouseClicked="#browseFolder" text="Add Path" />
+      <Label layoutX="41.0" layoutY="116.0" prefHeight="17.0" prefWidth="135.0" text="For Multiple Paths" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5f8fc" height="257.0" layoutX="469.0" layoutY="25.0" stroke="BLACK" strokeType="INSIDE" width="320.0" />
+      <Button layoutX="519.0" layoutY="59.0" mnemonicParsing="false" onAction="#deleteFiles" prefHeight="25.0" prefWidth="184.0" text="Delete Files" />
+      <Button layoutX="519.0" layoutY="104.0" mnemonicParsing="false" onAction="#moveFiles" prefHeight="25.0" prefWidth="184.0" text="Move Files" />
+      <Button layoutX="519.0" layoutY="192.0" mnemonicParsing="false" onAction="#configureSettings" prefHeight="25.0" prefWidth="184.0" text="Settings" />
+      <Button layoutX="519.0" layoutY="147.0" mnemonicParsing="false" onAction="#clearSearchResults" prefHeight="25.0" prefWidth="184.0" text="Clear Search Results" />
+      <TableView fx:id="fGroup" layoutX="38.0" layoutY="300.0" prefHeight="208.0" prefWidth="1033.0">
+        <columns>
+            <TableColumn fx:id="folderPath" prefWidth="246.0" text="Folder Path" />
+            <TableColumn fx:id="fileType" prefWidth="58.0" text="File Type" />
+            <TableColumn fx:id="createdDate" prefWidth="130.0" text="Created Date" />
+            <TableColumn fx:id="modifiedDate" prefWidth="135.0" text="Modified Date" />
+            <TableColumn fx:id="hidden" prefWidth="81.0" text="isHidden" />
+            <TableColumn fx:id="selected" prefWidth="61.0" text="Select">
+         <!--   <cellValueFactory>
+            	<CheckBoxCellFactory />
+            </cellValueFactory> -->
+            </TableColumn>
+          <TableColumn fx:id="fileName" minWidth="0.0" prefWidth="252.0" text="File Name" />
+            <TableColumn fx:id="groupId" prefWidth="75.0" text="Group" />
+        </columns>
+      </TableView>
+      <ListView fx:id="folderListView" layoutX="38.0" layoutY="136.0" prefHeight="156.0" prefWidth="387.0" />
+   </children>
+</AnchorPane>

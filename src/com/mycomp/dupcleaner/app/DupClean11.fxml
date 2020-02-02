@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane prefHeight="823.0" prefWidth="1247.0" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FrontController">
+   <children>
+      <Label layoutX="41.0" layoutY="42.0" prefHeight="21.0" prefWidth="91.0" text="Folder Path" />
+      <Button layoutX="346.0" layoutY="38.0" mnemonicParsing="false" onAction="#browseFolder" text="Browse" />
+      <TextField fx:id="filePath" layoutX="149.0" layoutY="38.0" prefHeight="25.0" prefWidth="197.0" text="Select the Folder path" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5f8fc" height="173.0" layoutX="38.0" layoutY="264.0" stroke="BLACK" strokeType="INSIDE" width="325.0" />
+      <TextField layoutX="149.0" layoutY="321.0" prefHeight="25.0" prefWidth="197.0" text="File Name eg *Hel*.mov,*.jpg" />
+      <Label layoutX="43.0" layoutY="326.0" prefHeight="17.0" prefWidth="69.0" text="File Name" />
+      <Button layoutX="437.0" layoutY="38.0" mnemonicParsing="false" onAction="#addFolder" onMouseClicked="#browseFolder" text="Add Path" />
+      <Label layoutX="38.0" layoutY="77.0" prefHeight="17.0" prefWidth="135.0" text="For Multiple Paths" />
+      <Button layoutX="660.0" layoutY="64.0" mnemonicParsing="false" onAction="#deleteFiles" prefHeight="25.0" prefWidth="184.0" text="Delete Files" />
+      <Button layoutX="660.0" layoutY="109.0" mnemonicParsing="false" onAction="#moveFiles" prefHeight="25.0" prefWidth="184.0" text="Move Files" />
+      <Button layoutX="660.0" layoutY="197.0" mnemonicParsing="false" onAction="#configureSettings" prefHeight="25.0" prefWidth="184.0" text="Settings" />
+      <Button layoutX="660.0" layoutY="152.0" mnemonicParsing="false" onAction="#clearSearchResults" prefHeight="25.0" prefWidth="184.0" text="Clear Search Results" />
+      <TableView fx:id="fGroup" layoutX="38.0" layoutY="454.0" prefHeight="291.0" prefWidth="1041.0">
+        <columns>
+            <TableColumn fx:id="folderPath" prefWidth="246.0" text="Folder Path" />
+            <TableColumn fx:id="fileType" prefWidth="58.0" text="File Type" />
+            <TableColumn fx:id="modifiedDate" prefWidth="135.0" text="Modified Date" />
+            <TableColumn fx:id="hidden" prefWidth="81.0" text="isHidden" />
+            <!-- <TableColumn fx:id="selected" prefWidth="61.0" text="Select">
+            <cellValueFactory>
+            	<CheckBoxCellFactory />
+            </cellValueFactory>
+            </TableColumn> -->
+          <TableColumn fx:id="fileName" minWidth="0.0" prefWidth="252.0" text="File Name" />
+            <TableColumn fx:id="groupId" prefWidth="75.0" text="Group" />
+            <TableColumn fx:id="createdDate" prefWidth="130.0" text="Created Date" />
+        </columns>
+      </TableView>
+      <ListView fx:id="folderListView" layoutX="38.0" layoutY="98.0" prefHeight="156.0" prefWidth="387.0" />
+      <TextField layoutX="149.0" layoutY="358.0" prefHeight="25.0" prefWidth="197.0" text="eg.  pdf, mov, dat" />
+      <Label layoutX="43.0" layoutY="363.0" prefHeight="17.0" prefWidth="69.0" text="File Extn" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5f8fc" height="173.0" layoutX="688.0" layoutY="264.0" stroke="BLACK" strokeType="INSIDE" width="387.0" />
+      <DatePicker layoutX="835.0" layoutY="341.0" />
+      <DatePicker layoutX="835.0" layoutY="383.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5f8fc" height="173.0" layoutX="363.0" layoutY="264.0" stroke="BLACK" strokeType="INSIDE" width="325.0" />
+      <Label layoutX="726.0" layoutY="346.0" prefHeight="17.0" prefWidth="69.0" text="Start Date" />
+      <Label layoutX="726.0" layoutY="383.0" prefHeight="17.0" prefWidth="69.0" text="End Date" />
+      <ComboBox layoutX="835.0" layoutY="307.0" prefHeight="31.0" prefWidth="218.0" />
+      <Label layoutX="726.0" layoutY="312.0" prefHeight="17.0" prefWidth="69.0" text="Date" />
+      <TextField layoutX="477.0" layoutY="347.0" prefHeight="25.0" prefWidth="197.0" text="eg. 1.2" />
+      <Label layoutX="371.0" layoutY="352.0" prefHeight="17.0" prefWidth="69.0" text="Min Size" />
+      <TextField layoutX="477.0" layoutY="384.0" prefHeight="25.0" prefWidth="197.0" text="eg. 143.35" />
+      <Label layoutX="371.0" layoutY="389.0" prefHeight="17.0" prefWidth="69.0" text="Max Size" />
+      <ComboBox layoutX="472.0" layoutY="306.0" prefHeight="31.0" prefWidth="207.0" />
+      <Label layoutX="374.0" layoutY="311.0" prefHeight="17.0" prefWidth="69.0" text="Size Units" />
+      <ToggleButton layoutX="248.0" layoutY="264.0" mnemonicParsing="false" text="Enable" />
+      <ToggleButton layoutX="576.0" layoutY="264.0" mnemonicParsing="false" text="Enable" />
+      <ToggleButton layoutX="909.0" layoutY="264.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="65.0" text="Enable" />
+   </children>
+</AnchorPane>
